@@ -1,0 +1,6 @@
+{
+  "name": "Vandali Pizzería Artesanal",
+  "description": "Menú digital interactivo y sistema de pedidos PWA para Vandali Pizzería Artesanal en Mérida con catálogo L/XL, conversión en vivo USD/Bs, checkout a WhatsApp y panel de administración.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

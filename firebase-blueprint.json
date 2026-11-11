@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "Order": {
+      "title": "Order",
+      "description": "Historical and active order records for the pizzeria",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique order identifier" },
+        "date": { "type": "string", "description": "Formatted date and time string" },
+        "customerName": { "type": "string", "description": "Customer name" },
+        "customerPhone": { "type": "string", "description": "Customer phone number" },
+        "deliveryType": { "type": "string", "description": "delivery, pickup, or mesa" },
+        "tableNumber": { "type": "string", "description": "Table number if applicable" },
+        "address": { "type": "string", "description": "Delivery address or zone" },
+        "paymentMethod": { "type": "string", "description": "Selected payment method" },
+        "paymentRef": { "type": "string", "description": "Payment reference code" },
+        "itemsSummary": { "type": "string", "description": "Text summary of items" },
+        "rawItems": { "type": "array", "description": "Raw array of cart items" },
+        "subtotalUSD": { "type": "number", "description": "Subtotal in USD" },
+        "discountUSD": { "type": "number", "description": "Loyalty discount in USD" },
+        "employeeDiscountUSD": { "type": "number", "description": "Employee discount in USD" },
+        "employeeDiscountPercent": { "type": "number", "description": "Employee discount percentage" },
+        "deliveryCostUSD": { "type": "number", "description": "Delivery cost in USD" },
+        "totalUSD": { "type": "number", "description": "Total in USD" },
+        "totalBs": { "type": "number", "description": "Total in Bs" },
+        "status": { "type": "string", "description": "recibido, preparando, en_camino, entregado, cancelado" },
+        "origin": { "type": "string", "description": "web_online or local_pos" },
+        "timestamp": { "type": "number", "description": "Order creation timestamp in ms" }
+      },
+      "required": ["id", "totalUSD", "status"]
+    },
+    "AdminConfig": {
+      "title": "AdminConfig",
+      "description": "Global restaurant settings, exchange rate, contact info",
+      "type": "object",
+      "properties": {
+        "exchangeRateBs": { "type": "number" },
+        "exchangeRateMode": { "type": "string" },
+        "lastRateUpdate": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "location": { "type": "string" }
+      }
+    },
+    "MenuCatalog": {
+      "title": "MenuCatalog",
+      "description": "Catalog of pizzas, drinks, salsas, and extras",
+      "type": "object",
+      "properties": {
+        "pizzas": { "type": "array" },
+        "drinks": { "type": "array" },
+        "salsas": { "type": "array" },
+        "extras": { "type": "array" },
+        "lastUpdated": { "type": "number" }
+      }
+    }
+  },
+  "firestore": {
+    "/orders/{orderId}": {
+      "entity": "Order",
+      "description": "Collection of all restaurant orders"
+    },
+    "/system_settings/config": {
+      "entity": "AdminConfig",
+      "description": "Global restaurant configuration document"
+    },
+    "/system_settings/menu": {
+      "entity": "MenuCatalog",
+      "description": "Global menu catalog document"
+    }
+  }
+}

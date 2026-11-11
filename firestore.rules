@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Orders collection: Persistent storage for historical orders, daily/weekly/monthly reports & live tracking
+    match /orders/{orderId} {
+      allow read, write: if true;
+    }
+
+    // System configuration and menu items
+    match /system_settings/{docId} {
+      allow read, write: if true;
+    }
+
+    // Default fallback
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

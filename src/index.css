@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-italian-red: #B71C1C;
+    --color-italian-red-hover: #991B1B;
+    --color-gold: #D4AF37;
+    --color-gold-hover: #B59328;
+    --color-dark-bg: #0e0e10;
+    --color-dark-card: #161619;
+    --color-dark-border: #26262b;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0e0e10;
+    color: #f4f4f5;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+}
+
+.font-vandali {
+  font-family: 'Permanent Marker', 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121215;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b2b33;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B71C1C;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Red & Gold Glows */
+.glow-red {
+  box-shadow: 0 0 25px -5px rgba(183, 28, 28, 0.4);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px -4px rgba(212, 175, 55, 0.35);
+}
+
+.text-gold {
+  color: #D4AF37;
+}
+
+.bg-gold {
+  background-color: #D4AF37;
+}
+
+.border-gold {
+  border-color: #D4AF37;
+}
+
+.bg-italian-red {
+  background-color: #B71C1C;
+}
+
+.text-italian-red {
+  color: #B71C1C;
+}
+
+.border-italian-red {
+  border-color: #B71C1C;
+}
